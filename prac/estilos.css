@@ -1,0 +1,224 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Oswald", sans-serif;
+    background-color: #000000;
+    color: #1e272e;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  
+  /* Menu navegacion */
+  .navegador {
+    margin-top: 20px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+    text-align: center;
+  }
+  /* acomodando menu */
+  .navegador ul {
+    display: flex;
+  }
+  
+  .navegador ul li {
+    padding: 10px;
+  }
+  
+  .navegador ul li a {
+    padding: 2px;
+    margin-left: 50px;
+  }
+  
+  .navegador ul li a:hover {
+    border-bottom: 2px solid #fff;
+  }
+  
+  .navegador ul.menu {
+    flex: 1;
+    margin-left: 100px;
+  }
+  
+  hr {
+    margin: 10px 0;
+  }
+  
+  /* Responsive Button */
+  .menu-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    z-index: 2;
+    display: none;
+  }
+  
+  /* SHOWCASE */
+  
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #fff;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  .showcase {
+    width: 100%;
+    height: 550px;
+    background: url("./img/VicunaSalarDeUyuni_20170503.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .showcase h2,
+  .showcase p {
+    margin-bottom: 10px;
+  }
+  
+  .showcase .btn {
+    margin-top: 20px;
+  }
+  
+  /* News Cards */
+  .tarjetas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 70px 0;
+  }
+  
+  .tarjetas img {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .tarjetas h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .tarjetas a {
+    padding: 10px 0;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  /* CARDS BANNER ONE */
+  .baner {
+ 
+    width: 100%;
+    height: 350px;
+    background: url("./img/31-Salar-de-Uyuni20181201-479.jpg");
+    margin-bottom: 40px;
+  }
+  
+  .baner .content {
+    width: 40%;
+    padding: 90px 0 0 30px;
+    color: #fff;
+  }
+  
+  .baner p{
+    margin: 10px 0 20px 0;
+  }  
+  /* Mobil */
+  @media (max-width: 700px) {
+    .menu-btn {
+      display: block;
+    }
+  
+    .menu-btn:hover {
+      opacity: 0.5;
+    }
+  
+    .navegador ul.menu {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #2f3640;
+      width: 50%;
+      height: 100%;
+      border-right: #ccc 1px solid;
+      opacity: 0.9;
+      padding: 30px;
+      transform: translateX(-500px);
+      transition: transform 0.5s ease-in-out;
+    }
+  
+    .navegador ul.menu li {
+      padding: 20px;
+      border-bottom: #ccc solid 1px;
+      font-size: 14px;
+    }
+    .navegador ul.menu li:last-child {
+      border-bottom: 0;
+    }
+  
+    .navegador ul.menu.show {
+      transform: translateX(-20px);
+    }
+  
+    .navegador ul.menu-right {
+      margin-right: 50px;
+    }
+  
+    .tarjetas {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .baner .content{
+      width: 80%;
+    }
+  
+  }
+  
+  @media (max-width: 500px) {
+    .tarjetas {
+      grid-template-columns: 1fr;
+    }
+  
+    .baner .content{
+      width: 100%;
+      padding: 60px 20px;
+    }
+    
+  }
