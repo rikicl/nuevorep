@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Practica 4</title>
+	<link rel="shortcut icon" href="favicon.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+	<section id="dailyForecast">
+		<div class="container">
+			<div class="row justify-content-around">
+				<div class="col-10 col-lg-5 tempBox text-center">
+					<i class="icon ion-location"></i>
+					<p><span class="locName">Your Location Here</span></p>
+				
+					<p id="diaActual" class="weekDayName0"></p>
+					<img src="" id="weatherIcon">
+					<p class="m0"><span class="weatherCondition">...</span></p>
+					<p class="m1"><span class="currentTemp"></span><span class="unit">°C</span></p>
+					<p class="feels"><i class="wi wi-barometer"></i> Feels Like: <span class="feelsLike">...</span></p>
+					<div class="row tempBoxSubInfo">
+						<div class="col">
+							<p><i class="wi wi-thermometer"></i>
+								Tem Max: <span class="tempMax">...</span>
+							</p>
+							<p><i class="wi wi-windy"></i>
+								Wind Speed: <span class="windSpeed">...</span> m/s
+							</p>	
+						</div>
+						<div class="col">
+							<p><i class="wi wi-thermometer-exterior"></i>
+								Tem Min: <span class="tempMin">...</span>
+							</p>
+							<p><i class="wi wi-humidity"></i>
+								Humidity: <span class="humidity">...</span> %
+							</p>
+						</div>
+					</div>
+					<br>
+					<div class="row sunTimes justify-content-center">
+						<div class="col sunrise">
+							<p><i class="wi wi-sunrise"></i> <span class="sunriseTime"></span></p>
+						</div>
+						<div class="col sunset">
+							<p><i class="wi wi-sunset"></i> <span class="sunsetTime"></span></p>
+						</div>
+						<div class="col">
+							<p><i class="wi wi-rain"></i> <span class="rainVol"></span></p>
+						</div>
+						<div class="col">
+							<p><i class="wi wi-snow"></i> <span class="snowVol"></span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	</section>
+
+	<section id="weeklyForecast">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-10 text-center">
+					<h3>Predicción Próximos días: <span class="weekDaysSummary"></span></h3>
+				</div>
+			</div>
+
+			<div class="row justify-content-around weekRows">
+				<div class="col-10 col-lg-5 dayCard text-center wow fadeInUp" data-wow-delay="0.2s">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<i id="weatherIcon1" class="wi wi-rain"></i>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax1"></span>°C
+								</p>
+								<p><span class="weekDayTempMin1"></span>°C<i
+										class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p id="siguiente1" class="weekDayName1">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p>""</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise1"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset1"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind1"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid1"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud1"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-10 col-lg-5 dayCard text-center wow fadeInUp" data-wow-delay="0.4s">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<i id="weatherIcon2" class="wi wi-day-cloudy"></i>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax2"></span>°C
+								</p>
+								<p><span class="weekDayTempMin2"></span>°C<i
+										class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p id="siguiente2" class="weekDayName2">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p>“”</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise2"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset2"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind2"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid2"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud2"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-around weekRows">
+				<div class="col-10 col-lg-5 dayCard text-center wow fadeInUp" data-wow-delay="0.2s">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<i id="weatherIcon3" class="wi wi-day-cloudy"></i>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax3"></span>°C
+								</p>
+								<p><span class="weekDayTempMin3"></span>°C<i
+										class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p id="siguiente3" class="weekDayName3">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p>“”</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise3"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset3"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind3"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid3"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud3"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-10 col-lg-5 dayCard text-center wow fadeInUp" data-wow-delay="0.4s">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<i id="weatherIcon4" class="wi wi-day-cloudy"></i>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax4"></span>°C
+								</p>
+								<p><span class="weekDayTempMax4"></span>°C<i
+										class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p id="siguiente4" class="weekDayName4">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p>“”</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise4"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset4"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind4"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid4"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud4"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-around weekRows">
+				<div class="col-10 col-lg-5 dayCard text-center wow fadeInUp" data-wow-delay="0.2s">
+					<div class="row">
+						<div class="col-5 dayIconHighlight">
+							<i id="weatherIcon5" class="wi wi-day-cloudy"></i>
+							<div class="dayMaxMin">
+								<p><i class="icon ion-arrow-graph-up-left"></i><span class="weekDayTempMax5"></span>°C
+								</p>
+								<p><span class="weekDayTempMax5"></span>°C<i
+										class="icon ion-arrow-graph-down-right"></i></p>
+							</div>
+						</div>
+						<div class="col-7 dayInfoHighlight">
+							<div class="row">
+								<div class="col-12 weekDay">
+									<p id="siguiente5" class="weekDayName5">Day</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySummary">
+									<p>“”</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 weekDaySun">
+									<p><i class="wi wi-sunrise"></i> <span class="weekDaySunrise5"></span> AM</p>
+									<p><i class="wi wi-sunset"></i> <span class="weekDaySunset5"></span> PM</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col weekDayWindnHumidity">
+									<p><i class="wi wi-windy"></i> <span class="weekDayWind5"></span> km/s</p>
+									<p><i class="wi wi-humidity"></i> <span class="weekDayHumid5"></span>%</p>
+									<p><i class="wi wi-day-cloudy-high"></i> <span class="weekDayCloud5"></span>%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	<!-- Scripts -->
+	<script rel="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<script type="text/javascript">
+		new WOW().init();
+	</script> -->
+	<script type="text/javascript" src="js/prediccion.js"></script>
+	<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+
+</body>
+
+</html>
